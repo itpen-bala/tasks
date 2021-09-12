@@ -1,19 +1,15 @@
 def is_palindrome(string):
     
-    right = int(len(string) / 2)
-    left = right - 1
-    if len(string) % 2 != 0:
-        right += 1
-    while left > -1:
-        if string[left] != string[right]:
+    str_len = len(string)
+    for delta in range(str_len):
+        if string[delta] != string[str_len - 1 - delta]:
             return False
-        left -= 1
-        right += 1
-    return True
+        if delta == int(str_len / 2):
+            return True
 
 if __name__ == "__main__":
 
     while True:
-        s = input("Enter the word: ")
-        print(is_palindrome(s))
+        word = input("Enter the word: ")
+        print("Word \'" + word + "\' is palindrome: " + str(is_palindrome(word)))
 
