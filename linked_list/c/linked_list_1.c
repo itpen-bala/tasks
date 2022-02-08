@@ -8,11 +8,10 @@ struct node
 
 void addNode(struct node *new, struct node *old)
 {
-    new->next == NULL;
     if(old != NULL)
-    {
-        old->next = new;
-    }
+        new->next = old;
+    else
+        new->next = NULL;
 }
 
 int main()
@@ -27,7 +26,15 @@ int main()
     printf("%d\n", n2.data);
 
     addNode(&n2, &n1);
-    printf("%d\n", n1.next->data);
+    printf("%d\n", n2.next->data);
+
+
+    struct node n3;
+    n3.data = 3;
+    printf("%d\n", n3.data);
+
+    addNode(&n3, &n2);
+    printf("%d\n", n3.next->data);
 
     return 0;
 }
