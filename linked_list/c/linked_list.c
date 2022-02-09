@@ -57,12 +57,12 @@ int delete_node(list **node, unsigned int id)
     return 0;
 }
 
-void traversal_tree(list *node)
+void traversal_list(list *node)
 {
     if(node != NULL)
     {
         printf("id: %d\n", node->id);
-        traversal_tree(node->next);
+        traversal_list(node->next);
     }
 }
 
@@ -76,7 +76,7 @@ int main()
        printf("id: %d\n", node->id);
    }
 
-   traversal_tree(node);
+   traversal_list(node);
 
    unsigned int id = 1;
    if (delete_node(&node, id) == 1)
@@ -84,7 +84,7 @@ int main()
    else
        printf("Node with id %d is not found\n", id);
    
-   traversal_tree(node);
+   traversal_list(node);
 
    return 0;
 }
