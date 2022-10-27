@@ -28,12 +28,12 @@ class RingBuffer:
     def __iter__(self) -> RingBufferIterator:
         return RingBufferIterator(self.buf)
 
-    def get_by_index(self, index: int) -> np.int8 | int:
+    def get_by_index(self, index: int) -> np.int8 | None:
         try:
             return self.buf[index]
         except IndexError:
-            print(f"Index {index} is out of bounds for length {self.buf}")
-            return 0
+            print(f"Index {index} is out of bounds for length {self.buf.size}")
+            return None
 
     def get_last(self) -> np.int8 | None:
         if self.last_el < 0:
