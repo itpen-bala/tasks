@@ -1,19 +1,27 @@
-     1
-    3 5
-   7 9 11
- 13 15 17 19
-21 23 25 27 29
-...
+#      1
+#     3 5
+#    7 9 11
+#  13 15 17 19
+# 21 23 25 27 29
+# ...
 
-#Посчитайте сумму н-го ряда пирамиды нечетных чисел (начало с 1)
+# Print pyramid of odd numbers (start with 1) and calculate numbers row of specified row 
 
-def get_sum(row: int, max_num: int) -> int:
-    count = 1
-    row_size = 1
+def get_odd_nums_sum(target_row: int) -> None:
+    row_nums = []
+    row_border = 1
+    num = 1
     
-    for _ in range(max_num):
-        if not count % 2 == 0:
-            print(count)
-        
-    
-    return 0
+    while True:
+        if not num % 2 == 0:
+            print(f"{num} ", end='')
+            row_nums.append(num)
+            if len(row_nums) == row_border:
+                print('\n', end='')
+                if row_border == target_row:
+                    break
+                row_border += 1
+                row_nums.clear()
+        num += 1
+
+    print(f"Result: {sum(row_nums)}")
