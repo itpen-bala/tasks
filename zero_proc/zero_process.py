@@ -5,11 +5,9 @@
 def zero_process(arr: list) -> None:
     zero_list = []
     index = 0
-    while index != len(arr):
+    len_arr = len(arr)
+    while index < len_arr:
         if arr[index] == 0:
-            zero_list.append(arr.pop(index))
+            arr.append(arr.pop(index))
         index += 1
-
-    for element in zero_list:
-        arr.append(element)
 
