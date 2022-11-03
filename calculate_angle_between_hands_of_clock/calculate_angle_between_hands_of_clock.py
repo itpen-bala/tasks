@@ -16,8 +16,6 @@ def calc_angle(hour: int, minute: int) -> int:
     int_hour_angle = 360 / 12 * hour
     fract_hour_angle = 360 / 12 / 60 * minute
     hour_angle = int_hour_angle + fract_hour_angle
-    print(hour_angle)
-    print(minute_angle)
     angle_between_hour_and_minute = abs(minute_angle - hour_angle)
     
     return int(angle_between_hour_and_minute)
